@@ -25,11 +25,12 @@ namespace FakeApplication.Migrations
             //      new Person { FullName = "Brice Lambson" },
             //      new Person { FullName = "Rowan Miller" }
             //    );
+
             context.FakeUsers.AddOrUpdate(
-                  p => p.=FakeName,
-                  new Models.FakeUsers { FakeName =DateTime.Now.AddYears(99).ToString() },
-                  new Models.FakeUsers {FakeName = DateTime.Now.AddDays(15).ToString() },
-                  new Models.FakeUsers { FakeName = DateTime.Now.AddDays(-15).ToString()}
+                  p => p.FakeName,
+                  new Models.FakeUsers { FakeName =DateTime.Now.AddYears(99).ToString(), FakeDate = "Andrew Peters" },
+                  new Models.FakeUsers {FakeName = DateTime.Now.AddDays(15).ToString(), FakeDate = "Brice Lambson" },
+                  new Models.FakeUsers { FakeName = DateTime.Now.AddDays(-15).ToString(), FakeDate = "Rowan Miller" }
                 );
 
         }

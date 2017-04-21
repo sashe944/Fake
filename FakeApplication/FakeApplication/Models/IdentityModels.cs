@@ -19,13 +19,15 @@ namespace FakeApplication.Models
     }
     public class FakeUsers
     {
-        public string FakeName { get; set; }
         public int Id { get; set; }
+        public string FakeName { get; set; }
         public string FakeDate { get; set; }
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+        public virtual IDbSet<FakeUsers> FakeUsers { get; set; }
+
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
