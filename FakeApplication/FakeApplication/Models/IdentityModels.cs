@@ -29,7 +29,7 @@ namespace FakeApplication.Models
         public virtual IDbSet<FakeUsers> FakeUsers { get; set; }
 
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("DefaultConnection-Prod", throwIfV1Schema: false)
         {
         }
 
